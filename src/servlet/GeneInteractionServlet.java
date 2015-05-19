@@ -32,6 +32,7 @@ public class GeneInteractionServlet extends HttpServlet {
 		if (GeneA.compareTo("") == 0 || GeneB.compareTo("") == 0)
 			return;
 		// System.out.println(GeneA + "\t" + GeneB);
+		GetResultFromPPI GetResultFromPPI = new GetResultFromPPI();
 		List<ElemOfPPI> pPIResults = GetResultFromPPI.getTwoGeneInteractionPPIResult(GeneA, GeneB);
 //		String result = "";
 //		for (ElemOfPPI ppi : pPIResults) {

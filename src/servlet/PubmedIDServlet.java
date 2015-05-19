@@ -39,6 +39,7 @@ public class PubmedIDServlet extends HttpServlet {
 		scrapyPubmed pubmed = new scrapyPubmed(pubmedID);
 		pubmed.scrapyFromNCBI();
 		
+		GetResultFromPPI GetResultFromPPI = new GetResultFromPPI();
 		List<ElemOfPPI> pPIResultList = GetResultFromPPI.getPubmedIDPPIResult(pubmedID);
 //		String result = "";
 //		for (ElemOfPPI ppi : pPIResultList) {

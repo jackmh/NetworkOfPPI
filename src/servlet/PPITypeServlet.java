@@ -33,6 +33,7 @@ public class PPITypeServlet extends HttpServlet {
 		if (PPIType == null)
 			return;
 		// System.out.println(pubmedID);
+		GetResultFromPPI GetResultFromPPI = new GetResultFromPPI();
 		List<ElemOfPPI> pPIResults = GetResultFromPPI.getTypePPIResult(PPIType);
 //		String result = "";
 //		for (ElemOfPPI ppi : pPIResults) {

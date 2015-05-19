@@ -58,9 +58,9 @@
 			<hr>
 			<h4>
 				Input Two Gene <small> For Example: <a
-						onclick="document.getElementById('GeneA').value='MMP2';
-							document.getElementById('GeneB').value='IL6'">Gene:MMP2
-							VS Gene:IL6</a>
+						onclick="document.getElementById('GeneA').value='ABCB1';
+							document.getElementById('GeneB').value='DNAH8'">Gene:ABCB1
+							VS Gene:DNAH8</a>
 				</small>
 			</h4>
 			<form class="form-inline" action="GeneInteractionServlet"
