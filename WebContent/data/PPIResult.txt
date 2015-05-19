@@ -1,0 +1,6 @@
+21114487	MMP2	4313	matrix metalloproteinase-2	IL6	3569	IL-6	complex	PPI
+21114487	MMP2	4313	matrix metalloproteinase-2	IL6R	3570		complex	PPI
+21114487	MMP2	4313	matrix metalloproteinase-2	MMP9	4318	MMP-9	complex	IPP
+21114487	MMP9	4318	MMP-9	IL6	3569	IL-6	complex	PIP
+21114487	MMP9	4318	MMP-9	IL6R	3570		complex	PPI
+21114487	IL6	3569	IL-6	IL6R	3570		complex	PPI
