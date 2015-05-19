@@ -17,6 +17,9 @@ public class GetResultFromPPI {
 	public GetResultFromPPI() {
 		dbhandler = new DBHandler();
 	}
+	/**
+	 * Needed to improved ...................................
+	 */
 	public List<ElemOfPPI> getPubmedIDPPIResult(String pubmedID) {
 		List<ElemOfPPI> PubmedIDOfPPIList = new ArrayList<ElemOfPPI>();
 		

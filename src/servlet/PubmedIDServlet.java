@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import banner.Sentence;
+import dao.pubmedNERDao;
 import edu.scrapy.scrapyPubmed;
 import edu.tools.GetResultFromPPI;
 
@@ -39,6 +41,14 @@ public class PubmedIDServlet extends HttpServlet {
 		scrapyPubmed pubmed = new scrapyPubmed(pubmedID);
 		pubmed.scrapyFromNCBI();
 		
+		/** 
+         * Gene Recognition
+         */
+		pubmedNERDao PubmedNERDao = new pubmedNERDao();
+		List<Sentence> geneTagSentenceList = PubmedNERDao.GeneTagger(
+				"./data/banner.properties", "./data/model_BC2GM.bin",
+				pubmed.getPubmedText());
+		
 		GetResultFromPPI GetResultFromPPI = new GetResultFromPPI();
 		List<ElemOfPPI> pPIResultList = GetResultFromPPI.getPubmedIDPPIResult(pubmedID);
 //		String result = "";
@@ -52,6 +62,7 @@ public class PubmedIDServlet extends HttpServlet {
 //		System.out.println(result);
 		HttpSession hs = request.getSession();
 		hs.setAttribute("pubmed", pubmed);
+		hs.setAttribute("geneTagSentenceList", geneTagSentenceList);
 		hs.setAttribute("pPIResultList", pPIResultList);
 		response.sendRedirect("PubmedIDResult.jsp?result=true");
 	}

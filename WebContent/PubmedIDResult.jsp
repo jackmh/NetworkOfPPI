@@ -1,5 +1,5 @@
 <%@ page language="java"
-	import="java.util.*, edu.scrapy.scrapyPubmed, interaction.ElemOfPPI"
+	import="java.util.*, edu.scrapy.scrapyPubmed, interaction.ElemOfPPI, banner.Sentence"
 	contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="zh-CN">
@@ -32,6 +32,7 @@
 		String pubmedTitle = pubmed.getPubmedTitle();
 		String pubmedAbstract = pubmed.getPubmedText();
 		List<ElemOfPPI> pPIResultList = (List<ElemOfPPI>) hs.getAttribute("pPIResultList");
+		List<Sentence> geneTagSentenceList = (List<Sentence>) hs.getAttribute("geneTagSentenceList");
 	%>
 	<div class="container">
 		<div class="page-header">
@@ -50,8 +51,15 @@
 		
 		<p>Protein Named entity Recognition.</p>
 		<h4><%=pubmedTitle%></h4>
-		<p>
-			<%=pubmedAbstract%>
+		<p class="pubmedNERText">
+			<%
+				for (Sentence sent : geneTagSentenceList) {
+					String text = sent.getSGML();
+			%>
+					<%=text%>&nbsp;
+			<%
+				}
+			%>
 		</p>
 		<hr>
 		<table id="PubmedIDResult"

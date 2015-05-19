@@ -7231,3 +7231,16 @@ button.close {
 		display: none !important
 	}
 }
+
+
+p.pubmedNERText, p.pubmedNORMText {
+        font-size: 15px;
+        line-hight: 3em;
+        font-family: Serif, Georgia, "Times New Roman";
+}
+
+GENE {
+        margin-bottom: 2px;
+        border: 1px solid red;
+}
+
