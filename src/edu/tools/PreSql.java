@@ -1,6 +1,6 @@
 package edu.tools;
 
-//��Ҫ���õ�SQL���
+// mysql sentence.
 public final class PreSql {
 
 	public static final String DB_PPI_GENESELECT = "select geneName from Gene where geneID=?";
