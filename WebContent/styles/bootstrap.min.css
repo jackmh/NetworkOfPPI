@@ -7233,7 +7233,7 @@ button.close {
 }
 
 
-p.pubmedNERText, p.pubmedNORMText {
+p .pubmedNERText, p .pubmedNORMText {
         font-size: 15px;
         line-hight: 3em;
         font-family: Serif, Georgia, "Times New Roman";

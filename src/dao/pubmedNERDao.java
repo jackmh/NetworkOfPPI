@@ -6,6 +6,7 @@ import java.text.BreakIterator;
 import java.util.ArrayList;
 import java.util.List;
 
+import servlet.PubmedIDServlet;
 import banner.BannerProperties;
 import banner.Sentence;
 import banner.processing.PostProcessor;
@@ -18,7 +19,9 @@ public class pubmedNERDao {
 	 */
 	public List<Sentence> GeneTagger(String propertiesFilename,
 			String modelFilename, String pubmedAbstractText) throws IOException {
+		
 		// Get the properties and create the tagger
+		
 		BannerProperties properties = BannerProperties.load(propertiesFilename);
 		Tokenizer tokenizer = properties.getTokenizer();
 		CRFTagger tagger = CRFTagger.load(new File(modelFilename),
